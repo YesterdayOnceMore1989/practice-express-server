@@ -4,6 +4,7 @@ const fs = require('fs');
 
 
 var app = express();
+var port = process.env.PORT || 3000;
 app.set('views engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
 hbs.registerHelper('getCurrentYear', ()=>{
@@ -42,6 +43,6 @@ app.get('/about', (req, res)=>{
 })
 
 
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
   console.log('Server is up on port 3000');
 });
